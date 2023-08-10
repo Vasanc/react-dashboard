@@ -51,7 +51,7 @@ const Sidebar = () => {
           backgroundColor: "transparent !important",
         },
         "& .pro-inner-item": {
-          padding: "0px 20px 5px 10px !important",
+          padding: "5px 35px 5px 20px !important",
         },
         "& .pro-inner-item:hover": {
           color: "#868dfb !important",
@@ -68,7 +68,7 @@ const Sidebar = () => {
             onClick={() => setIsCollapsed(!isCollapsed)}
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
             style={{
-              margin: "16px 0 10px 0",
+              margin: "10px 0 20px 0",
               color: colors.grey[100],
             }}
           >
@@ -80,7 +80,7 @@ const Sidebar = () => {
                 ml="15px"
               >
                 <Typography variant="h3" color={colors.grey[100]}>
-                  ADMIN
+                  ADMINIS
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
@@ -89,6 +89,32 @@ const Sidebar = () => {
             )}
           </MenuItem>
 
+          {!isCollapsed && (
+            <Box mb="25px">
+              <Box display="flex" justifyContent="center" alignItems="center">
+                <img
+                  alt="profile-user"
+                  width="100px"
+                  height="100px"
+                  src={`src/assets/user.jpeg`}
+                  style={{ cursor: "pointer", borderRadius: "50%" }}
+                />
+              </Box>
+              <Box textAlign="center">
+                <Typography
+                  variant="h2"
+                  color={colors.grey[100]}
+                  fontWeight="bold"
+                  sx={{ m: "10px 0 0 0" }}
+                >
+                  Hari Gupta
+                </Typography>
+                <Typography variant="h5" color={colors.greenAccent[500]}>
+                  Girl's Weakness
+                </Typography>
+              </Box>
+            </Box>
+          )}
 
           <Box paddingLeft={isCollapsed ? undefined : "10%"}>
             <Item
